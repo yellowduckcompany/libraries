@@ -17,6 +17,11 @@ class Channel {
         if (!this.user) {
             this.user = await this.whoami();
         }
+        
+        let content = e.outerHTML;
+        if (e.tagName === 'INPUT' || e.tagName === 'TEXTAREA') {
+            content = e.value;
+        }
 
         if (e && this.user) {
             fetch(this.api, {
@@ -28,7 +33,7 @@ class Channel {
                     "app": this.app,
                     "user": this.user,
                     "id": e.id,
-                    "payload": e
+                    "payload": content
                 })
             });
         }
