@@ -30,7 +30,7 @@ class Channel {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "app": this.app,
+                    "account": this.app,
                     "user": this.user,
                     "id": e.id,
                     "payload": content
