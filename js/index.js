@@ -27,7 +27,8 @@ class Channel {
                 body: JSON.stringify({
                     "app": this.app,
                     "user": this.user,
-                    "id": e
+                    "id": e.id,
+                    "payload": e
                 })
             });
         }
